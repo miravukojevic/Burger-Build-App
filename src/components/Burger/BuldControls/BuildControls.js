@@ -11,10 +11,13 @@ const controls = [
 
 const buildControls = (props) => (
     <div className={classes.BuildControls}>
+    <p>Current Price: {props.price}</p>
         {controls.map(mira => (
             console.log('mira', mira),
-            <BuildControl added={() => props.ingredientAdded(mira.type)} key={mira.label} label={mira.label}/>
+            <BuildControl added={() => props.ingredientAdded(mira.type)} key={mira.label} removed={() => props.ingredientRemoved(mira.type)}label={mira.label} />
         ))}
+
+        <button className={classes.OrderButton} disabled={!props.purchasable} onClick={props.ordered}>ORDER NOW</button>
         
     </div>
 )
