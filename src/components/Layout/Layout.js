@@ -1,7 +1,8 @@
 import React from 'react';
-import Aux from '../../hoc/Aux';
-import classes from './Layout.css';
+import Aux from '../../hoc/Miux';
+import classes from './Layout.module.css';
 import myFunctions from '../../utils/heleper';
+import Toolbar from '../Navigation/Toolbar/Toolbar'
 
 const layout = (props) => {
 
@@ -13,7 +14,7 @@ const layout = (props) => {
     return (
         <>
             <Aux>
-                <div>Toolbar, SIdeDrawsr, Backdrop</div>
+                <Toolbar />
                 <main className={classes.content}>
                     {props.children}
                 </main>
